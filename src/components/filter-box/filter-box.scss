@@ -26,5 +26,7 @@
 
   &__checkboxes {
     flex: 8;
+    display: flex;
+    flex-direction: column;
   }
 }
