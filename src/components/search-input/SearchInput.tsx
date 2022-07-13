@@ -5,7 +5,7 @@ import "./search-input.scss";
 const SearchInput = () => {
   return (
     <TextField
-      size="small"
+      size="medium"
       label={
         <div className="search-input-label">
           <Search className="search-input-label__icon" />

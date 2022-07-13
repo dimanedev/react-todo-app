@@ -1,22 +1,29 @@
+import { useState } from "react";
+import MySelect from "../my-select/MySelect";
 import SearchInput from "../search-input/SearchInput";
 import "./filter-box.scss";
 
 type Props = {};
 
 const FilterBox = (props: Props) => {
+  const [sort, setSort] = useState<string>("");
+
+  const selectSort = (sort: string) => {
+    setSort(sort);
+  };
+
   return (
     <div className="filterbox">
       <div className="filterbox__row">
         <div className="filterbox__search">
           <SearchInput />
         </div>
-        <select className="filterbox__select">
-          <option value="v" disabled>
-            sort by
-          </option>
-          <option value="v">name</option>
-          <option value="v">date created</option>
-        </select>
+        <div className="filterbox__select">
+          <MySelect
+            onChange={selectSort}
+            options={["name", "date created", "color"]}
+          />
+        </div>
       </div>
       <div className="filterbox__row">
         <div className="filterbox__checkboxes">
