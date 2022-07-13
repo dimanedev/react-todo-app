@@ -1,4 +1,4 @@
-import React from "react";
+import SearchInput from "../search-input/SearchInput";
 import "./filter-box.scss";
 
 type Props = {};
@@ -7,11 +7,9 @@ const FilterBox = (props: Props) => {
   return (
     <div className="filterbox">
       <div className="filterbox__row">
-        <input
-          className="filterbox__search"
-          type="text"
-          placeholder="search todos"
-        />
+        <div className="filterbox__search">
+          <SearchInput />
+        </div>
         <select className="filterbox__select">
           <option value="v" disabled>
             sort by
