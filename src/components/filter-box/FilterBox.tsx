@@ -1,8 +1,18 @@
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { useState } from "react";
+import ColorSelect from "../color-select/ColorSelect";
 import MySelect from "../my-select/MySelect";
 import SearchInput from "../search-input/SearchInput";
 import "./filter-box.scss";
+
+const colors = [
+  { name: "red", hex: "#C9414D" },
+  { name: "orange", hex: "#EC7F37" },
+  { name: "yellow", hex: "#E7C335" },
+  { name: "green", hex: "#4FA757" },
+  { name: "blue", hex: "#1C9ACF" },
+  { name: "purple", hex: "#8731c1" },
+];
 
 type Props = {};
 
@@ -29,6 +39,8 @@ const FilterBox = (props: Props) => {
   const selectSort = (sort: string) => {
     setSort(sort);
   };
+
+  const [selectedColors, setSelectedColors] = useState<string[]>([]);
 
   return (
     <div className="filterbox">
@@ -66,13 +78,11 @@ const FilterBox = (props: Props) => {
             }
           />
         </div>
-        <select className="filterbox__select">
-          <option value="v" disabled>
-            color:
-          </option>
-          <option value="v">color1</option>
-          <option value="v">color2</option>
-        </select>
+        <ColorSelect
+          colors={colors}
+          onChange={setSelectedColors}
+          selectedColors={selectedColors}
+        />
       </div>
     </div>
   );
