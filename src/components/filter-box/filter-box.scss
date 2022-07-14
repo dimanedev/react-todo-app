@@ -1,0 +1,41 @@
+.filterbox {
+  width: 60%;
+  max-width: 800px;
+  min-width: 500px;
+  height: auto;
+  margin: 20px auto 0;
+  border: 2px solid #c4c4c4;
+  border-radius: 6px;
+  padding: 20px 20px 10px;
+
+  &__row {
+    width: 100%;
+    display: flex;
+    column-gap: 20px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__search {
+    flex: 8;
+  }
+
+  &__select {
+    flex: 4;
+
+    &_big {
+      flex: none;
+      width: 60%;
+    }
+  }
+
+  &__checkboxes {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+  }
+}
