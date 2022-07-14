@@ -39,35 +39,33 @@ export default function ColorSelect({
   };
 
   return (
-    <div>
-      <FormControl sx={{ m: 1, width: 300 }}>
-        <InputLabel id="color-select-label">Colors</InputLabel>
-        <Select
-          labelId="color-select-label"
-          multiple
-          value={selectedColors}
-          onChange={handleChange}
-          input={<OutlinedInput label="Name" />}
-          MenuProps={MenuProps}
-        >
-          {colors.map((color) => (
-            <MenuItem key={color.name} value={color.hex}>
-              <div
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "5px",
-                  marginRight: "2px",
-                  transform: "translateY(2px)",
-                }}
-              >
-                <CircleIcon style={{ color: color.hex }} />
-                <span>{color.name}</span>
-              </div>
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </div>
+    <FormControl sx={{ m: 1, width: "100%", margin: "10px 0" }}>
+      <InputLabel id="color-select-label">Colors</InputLabel>
+      <Select
+        labelId="color-select-label"
+        multiple
+        value={selectedColors}
+        onChange={handleChange}
+        input={<OutlinedInput label="Name" />}
+        MenuProps={MenuProps}
+      >
+        {colors.map((color) => (
+          <MenuItem key={color.name} value={color.hex}>
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+                marginRight: "2px",
+                transform: "translateY(2px)",
+              }}
+            >
+              <CircleIcon style={{ color: color.hex }} />
+              <span>{color.name}</span>
+            </div>
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
   );
 }

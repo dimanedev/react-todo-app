@@ -78,11 +78,13 @@ const FilterBox = (props: Props) => {
             }
           />
         </div>
-        <ColorSelect
-          colors={colors}
-          onChange={setSelectedColors}
-          selectedColors={selectedColors}
-        />
+        <div className="filterbox__select filterbox__select_big">
+          <ColorSelect
+            colors={colors}
+            onChange={setSelectedColors}
+            selectedColors={selectedColors}
+          />
+        </div>
       </div>
     </div>
   );
